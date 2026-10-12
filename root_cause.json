@@ -1,0 +1,151 @@
+{
+  "matched_episodes": 54,
+  "signals_and_records": {
+    "top1_accuracy": 1.0,
+    "top3_accuracy": 1.0,
+    "expected_calibration_error": 0.016,
+    "mean_confidence": 0.984,
+    "confusion_matrix": {
+      "labels": [
+        "turndown",
+        "steam_valve_stiction",
+        "reboiler_fouling",
+        "tray_damage",
+        "pressure_rise",
+        "subcooled_feed",
+        "flooding",
+        "foaming",
+        "analyzer_fault"
+      ],
+      "matrix": [
+        [
+          13,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          10,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          3,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          5,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          11
+        ]
+      ]
+    },
+    "per_cause_accuracy": {
+      "turndown": 1.0,
+      "steam_valve_stiction": 1.0,
+      "reboiler_fouling": 1.0,
+      "tray_damage": 1.0,
+      "pressure_rise": 1.0,
+      "subcooled_feed": 1.0,
+      "flooding": 1.0,
+      "foaming": 1.0,
+      "analyzer_fault": 1.0
+    },
+    "errors": []
+  },
+  "signals_only": {
+    "top1_accuracy": 0.963,
+    "top3_accuracy": 1.0,
+    "expected_calibration_error": 0.0511,
+    "mean_confidence": 0.9496
+  },
+  "records_only": {
+    "top1_accuracy": 0.963,
+    "top3_accuracy": 1.0,
+    "expected_calibration_error": 0.116,
+    "mean_confidence": 0.8473
+  },
+  "learned_signature_classifier_loo": {
+    "top1_accuracy": 0.9444,
+    "note": "logistic regression on episode signatures, leave one episode out; needs labelled history"
+  }
+}

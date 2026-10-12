@@ -1,0 +1,76 @@
+# Weir Whisper AI default run profile.
+# Paths are relative to the repository root.
+
+seed: 20261012
+
+paths:
+  plant: config/plant.yaml
+  raw: data/raw
+  processed: data/processed
+  knowledge: data/raw/knowledge
+  models: outputs/models
+  graph: outputs/graph
+  index: outputs/index
+  reports: outputs/reports
+  metrics: outputs/metrics
+  figures: docs/figures
+
+simulation:
+  start: "2025-10-01 00:00"
+  end: "2026-09-30 23:55"
+  step_minutes: 5
+  reference_days: 24          # fault free commissioning baseline at the start of the year
+  columns: [C101, C201, C301, C401, C501, C601]
+  min_gap_days: 3.0           # minimum quiet time between two scenarios on one column
+  # Number of scenario instances per column. Causes ending in a family suffix recur on the
+  # same physical asset and share a recurrence family in the ground truth.
+  schedule:
+    C101: {turndown: 2, reboiler_fouling: 1, pressure_rise: 1, foaming: 1, flooding: 1}
+    C201: {steam_valve_stiction: 4, turndown: 2, analyzer_fault: 1, flooding: 2}
+    C301: {tray_damage: 1, turndown: 2, analyzer_fault: 1}
+    C401: {turndown: 4, pressure_rise: 2, analyzer_fault: 1, flooding: 1}
+    C501: {subcooled_feed: 2, steam_valve_stiction: 2, turndown: 1, flooding: 1}
+    C601: {reboiler_fouling: 1, subcooled_feed: 1, turndown: 2, foaming: 1}
+
+text:
+  log_item_probability: 0.82     # chance that an operator writes about an active issue on a shift
+  misattribution_rate: 0.06      # operator blames the wrong cause in a note
+  typo_rate: 0.04
+  background_items_per_log: [2, 5]
+  background_work_orders: 520
+
+detector:
+  reference_days: 21             # fault free commissioning window used to fit normal behaviour models
+  cv_folds: 4                    # blocked temporal folds for out of fold probabilities
+  window_short: 12               # samples, 1 hour at 5 minute resolution
+  window_long: 36                # samples, 3 hours
+  train_end: "2026-06-01"
+  max_iter: 350
+  learning_rate: 0.06
+  max_leaf_nodes: 31
+  smoothing_samples: 6
+  enter_threshold: 0.55
+  exit_threshold: 0.30
+  min_episode_minutes: 30
+  merge_gap_minutes: 180
+  incident_gap_hours: 36         # weeping segments closer than this form one incident
+  max_train_rows: 160000
+
+retrieval:
+  chunk_tokens: 160
+  lsa_components: 192
+  rrf_k: 60
+  top_k: 12
+  graph_hops: 2
+  lookback_hours: 72
+  lookahead_hours: 48
+
+llm:
+  backend: offline              # offline or anthropic
+  model: claude-sonnet-5-5
+  max_tokens: 3000
+  temperature: 0.0
+
+api:
+  host: 127.0.0.1
+  port: 8077

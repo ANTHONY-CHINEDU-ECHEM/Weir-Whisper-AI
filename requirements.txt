@@ -1,0 +1,16 @@
+numpy>=1.26
+pandas>=2.1
+pyarrow>=14
+scipy>=1.11
+scikit-learn>=1.4
+networkx>=3.2
+matplotlib>=3.8
+pyyaml>=6.0
+pydantic>=2.5
+fastapi>=0.110
+uvicorn>=0.27
+httpx>=0.27
+pytest>=8.0
+# optional
+# anthropic>=0.40            (Claude writer and question answering)
+# sentence-transformers>=2.6 (dense encoder alternative to LSA)

@@ -1,0 +1,121 @@
+column,tag,role,unit,description
+C101,FI102,feed_flow,t/h,C101 Debutaniser: Column feed flow
+C101,TI103,feed_temp,degC,C101 Debutaniser: Feed temperature downstream of preheater
+C101,FIC104,reflux_flow,t/h,C101 Debutaniser: Reflux flow
+C101,FI105,distillate_flow,t/h,C101 Debutaniser: Overhead product flow
+C101,FI106,bottoms_flow,t/h,C101 Debutaniser: Bottoms product flow
+C101,FIC107,steam_flow,t/h,C101 Debutaniser: Reboiler heating steam flow
+C101,FIC107_SP,steam_sp,t/h,C101 Debutaniser: Reboiler steam flow setpoint
+C101,FV107_OP,steam_valve_op,%,C101 Debutaniser: Reboiler steam control valve output
+C101,PIC108,top_pressure,barg,C101 Debutaniser: Column overhead pressure
+C101,PIC108_SP,pressure_sp,barg,C101 Debutaniser: Column overhead pressure setpoint
+C101,PDI109,dp_rect,mbar,C101 Debutaniser: Differential pressure across the rectifying section
+C101,PDI110,dp_strip,mbar,C101 Debutaniser: Differential pressure across the stripping section
+C101,TI111,top_temp,degC,C101 Debutaniser: Overhead vapour temperature
+C101,TIC112,sens_temp,degC,C101 Debutaniser: Sensitive tray temperature (boilup control)
+C101,TIC112_SP,sens_temp_sp,degC,C101 Debutaniser: Sensitive tray temperature setpoint
+C101,TI113,bottom_temp,degC,C101 Debutaniser: Column bottom temperature
+C101,LIC114,sump_level,%,C101 Debutaniser: Column sump level
+C101,AI115,top_analyzer,mol%,C101 Debutaniser: Overhead heavy key impurity analyzer
+C101,AI116,bottom_analyzer,mol%,C101 Debutaniser: Bottoms light key impurity analyzer
+C101,PI117,chest_pressure,barg,C101 Debutaniser: Reboiler steam chest pressure
+C201,FI202,feed_flow,t/h,C201 Depropaniser: Column feed flow
+C201,TI203,feed_temp,degC,C201 Depropaniser: Feed temperature downstream of preheater
+C201,FIC204,reflux_flow,t/h,C201 Depropaniser: Reflux flow
+C201,FI205,distillate_flow,t/h,C201 Depropaniser: Overhead product flow
+C201,FI206,bottoms_flow,t/h,C201 Depropaniser: Bottoms product flow
+C201,FIC207,steam_flow,t/h,C201 Depropaniser: Reboiler heating steam flow
+C201,FIC207_SP,steam_sp,t/h,C201 Depropaniser: Reboiler steam flow setpoint
+C201,FV207_OP,steam_valve_op,%,C201 Depropaniser: Reboiler steam control valve output
+C201,PIC208,top_pressure,barg,C201 Depropaniser: Column overhead pressure
+C201,PIC208_SP,pressure_sp,barg,C201 Depropaniser: Column overhead pressure setpoint
+C201,PDI209,dp_rect,mbar,C201 Depropaniser: Differential pressure across the rectifying section
+C201,PDI210,dp_strip,mbar,C201 Depropaniser: Differential pressure across the stripping section
+C201,TI211,top_temp,degC,C201 Depropaniser: Overhead vapour temperature
+C201,TIC212,sens_temp,degC,C201 Depropaniser: Sensitive tray temperature (boilup control)
+C201,TIC212_SP,sens_temp_sp,degC,C201 Depropaniser: Sensitive tray temperature setpoint
+C201,TI213,bottom_temp,degC,C201 Depropaniser: Column bottom temperature
+C201,LIC214,sump_level,%,C201 Depropaniser: Column sump level
+C201,AI215,top_analyzer,mol%,C201 Depropaniser: Overhead heavy key impurity analyzer
+C201,AI216,bottom_analyzer,mol%,C201 Depropaniser: Bottoms light key impurity analyzer
+C201,PI217,chest_pressure,barg,C201 Depropaniser: Reboiler steam chest pressure
+C301,FI302,feed_flow,t/h,C301 Deethaniser: Column feed flow
+C301,TI303,feed_temp,degC,C301 Deethaniser: Feed temperature downstream of preheater
+C301,FIC304,reflux_flow,t/h,C301 Deethaniser: Reflux flow
+C301,FI305,distillate_flow,t/h,C301 Deethaniser: Overhead product flow
+C301,FI306,bottoms_flow,t/h,C301 Deethaniser: Bottoms product flow
+C301,FIC307,steam_flow,t/h,C301 Deethaniser: Reboiler heating steam flow
+C301,FIC307_SP,steam_sp,t/h,C301 Deethaniser: Reboiler steam flow setpoint
+C301,FV307_OP,steam_valve_op,%,C301 Deethaniser: Reboiler steam control valve output
+C301,PIC308,top_pressure,barg,C301 Deethaniser: Column overhead pressure
+C301,PIC308_SP,pressure_sp,barg,C301 Deethaniser: Column overhead pressure setpoint
+C301,PDI309,dp_rect,mbar,C301 Deethaniser: Differential pressure across the rectifying section
+C301,PDI310,dp_strip,mbar,C301 Deethaniser: Differential pressure across the stripping section
+C301,TI311,top_temp,degC,C301 Deethaniser: Overhead vapour temperature
+C301,TIC312,sens_temp,degC,C301 Deethaniser: Sensitive tray temperature (boilup control)
+C301,TIC312_SP,sens_temp_sp,degC,C301 Deethaniser: Sensitive tray temperature setpoint
+C301,TI313,bottom_temp,degC,C301 Deethaniser: Column bottom temperature
+C301,LIC314,sump_level,%,C301 Deethaniser: Column sump level
+C301,AI315,top_analyzer,mol%,C301 Deethaniser: Overhead heavy key impurity analyzer
+C301,AI316,bottom_analyzer,mol%,C301 Deethaniser: Bottoms light key impurity analyzer
+C301,PI317,chest_pressure,barg,C301 Deethaniser: Reboiler steam chest pressure
+C401,FI402,feed_flow,t/h,C401 C3 Splitter: Column feed flow
+C401,TI403,feed_temp,degC,C401 C3 Splitter: Feed temperature downstream of preheater
+C401,FIC404,reflux_flow,t/h,C401 C3 Splitter: Reflux flow
+C401,FI405,distillate_flow,t/h,C401 C3 Splitter: Overhead product flow
+C401,FI406,bottoms_flow,t/h,C401 C3 Splitter: Bottoms product flow
+C401,FIC407,steam_flow,t/h,C401 C3 Splitter: Reboiler heating steam flow
+C401,FIC407_SP,steam_sp,t/h,C401 C3 Splitter: Reboiler steam flow setpoint
+C401,FV407_OP,steam_valve_op,%,C401 C3 Splitter: Reboiler steam control valve output
+C401,PIC408,top_pressure,barg,C401 C3 Splitter: Column overhead pressure
+C401,PIC408_SP,pressure_sp,barg,C401 C3 Splitter: Column overhead pressure setpoint
+C401,PDI409,dp_rect,mbar,C401 C3 Splitter: Differential pressure across the rectifying section
+C401,PDI410,dp_strip,mbar,C401 C3 Splitter: Differential pressure across the stripping section
+C401,TI411,top_temp,degC,C401 C3 Splitter: Overhead vapour temperature
+C401,TIC412,sens_temp,degC,C401 C3 Splitter: Sensitive tray temperature (boilup control)
+C401,TIC412_SP,sens_temp_sp,degC,C401 C3 Splitter: Sensitive tray temperature setpoint
+C401,TI413,bottom_temp,degC,C401 C3 Splitter: Column bottom temperature
+C401,LIC414,sump_level,%,C401 C3 Splitter: Column sump level
+C401,AI415,top_analyzer,mol%,C401 C3 Splitter: Overhead heavy key impurity analyzer
+C401,AI416,bottom_analyzer,mol%,C401 C3 Splitter: Bottoms light key impurity analyzer
+C401,PI417,chest_pressure,barg,C401 C3 Splitter: Reboiler steam chest pressure
+C501,FI502,feed_flow,t/h,C501 Naphtha Splitter: Column feed flow
+C501,TI503,feed_temp,degC,C501 Naphtha Splitter: Feed temperature downstream of preheater
+C501,FIC504,reflux_flow,t/h,C501 Naphtha Splitter: Reflux flow
+C501,FI505,distillate_flow,t/h,C501 Naphtha Splitter: Overhead product flow
+C501,FI506,bottoms_flow,t/h,C501 Naphtha Splitter: Bottoms product flow
+C501,FIC507,steam_flow,t/h,C501 Naphtha Splitter: Reboiler heating steam flow
+C501,FIC507_SP,steam_sp,t/h,C501 Naphtha Splitter: Reboiler steam flow setpoint
+C501,FV507_OP,steam_valve_op,%,C501 Naphtha Splitter: Reboiler steam control valve output
+C501,PIC508,top_pressure,barg,C501 Naphtha Splitter: Column overhead pressure
+C501,PIC508_SP,pressure_sp,barg,C501 Naphtha Splitter: Column overhead pressure setpoint
+C501,PDI509,dp_rect,mbar,C501 Naphtha Splitter: Differential pressure across the rectifying section
+C501,PDI510,dp_strip,mbar,C501 Naphtha Splitter: Differential pressure across the stripping section
+C501,TI511,top_temp,degC,C501 Naphtha Splitter: Overhead vapour temperature
+C501,TIC512,sens_temp,degC,C501 Naphtha Splitter: Sensitive tray temperature (boilup control)
+C501,TIC512_SP,sens_temp_sp,degC,C501 Naphtha Splitter: Sensitive tray temperature setpoint
+C501,TI513,bottom_temp,degC,C501 Naphtha Splitter: Column bottom temperature
+C501,LIC514,sump_level,%,C501 Naphtha Splitter: Column sump level
+C501,AI515,top_analyzer,mol%,C501 Naphtha Splitter: Overhead heavy key impurity analyzer
+C501,AI516,bottom_analyzer,mol%,C501 Naphtha Splitter: Bottoms light key impurity analyzer
+C501,PI517,chest_pressure,barg,C501 Naphtha Splitter: Reboiler steam chest pressure
+C601,FI602,feed_flow,t/h,C601 Condensate Stabiliser: Column feed flow
+C601,TI603,feed_temp,degC,C601 Condensate Stabiliser: Feed temperature downstream of preheater
+C601,FIC604,reflux_flow,t/h,C601 Condensate Stabiliser: Reflux flow
+C601,FI605,distillate_flow,t/h,C601 Condensate Stabiliser: Overhead product flow
+C601,FI606,bottoms_flow,t/h,C601 Condensate Stabiliser: Bottoms product flow
+C601,FIC607,steam_flow,t/h,C601 Condensate Stabiliser: Reboiler heating steam flow
+C601,FIC607_SP,steam_sp,t/h,C601 Condensate Stabiliser: Reboiler steam flow setpoint
+C601,FV607_OP,steam_valve_op,%,C601 Condensate Stabiliser: Reboiler steam control valve output
+C601,PIC608,top_pressure,barg,C601 Condensate Stabiliser: Column overhead pressure
+C601,PIC608_SP,pressure_sp,barg,C601 Condensate Stabiliser: Column overhead pressure setpoint
+C601,PDI609,dp_rect,mbar,C601 Condensate Stabiliser: Differential pressure across the rectifying section
+C601,PDI610,dp_strip,mbar,C601 Condensate Stabiliser: Differential pressure across the stripping section
+C601,TI611,top_temp,degC,C601 Condensate Stabiliser: Overhead vapour temperature
+C601,TIC612,sens_temp,degC,C601 Condensate Stabiliser: Sensitive tray temperature (boilup control)
+C601,TIC612_SP,sens_temp_sp,degC,C601 Condensate Stabiliser: Sensitive tray temperature setpoint
+C601,TI613,bottom_temp,degC,C601 Condensate Stabiliser: Column bottom temperature
+C601,LIC614,sump_level,%,C601 Condensate Stabiliser: Column sump level
+C601,AI615,top_analyzer,mol%,C601 Condensate Stabiliser: Overhead heavy key impurity analyzer
+C601,AI616,bottom_analyzer,mol%,C601 Condensate Stabiliser: Bottoms light key impurity analyzer
+C601,PI617,chest_pressure,barg,C601 Condensate Stabiliser: Reboiler steam chest pressure

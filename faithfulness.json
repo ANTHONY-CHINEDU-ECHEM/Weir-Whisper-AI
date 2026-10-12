@@ -1,0 +1,30 @@
+{
+  "reports": 74,
+  "claims_total": 1296,
+  "claims_supported": 1296,
+  "citation_coverage": 1.0,
+  "numbers_checked": 2407,
+  "false_rejection_rate_on_clean_claims": 0.0,
+  "injected_error_detection": {
+    "number_changed": {
+      "injected": 53,
+      "caught": 52,
+      "rate": 0.9811
+    },
+    "fake_evidence_id": {
+      "injected": 74,
+      "caught": 74,
+      "rate": 1.0
+    },
+    "out_of_window_evidence": {
+      "injected": 74,
+      "caught": 74,
+      "rate": 1.0
+    },
+    "uncited_claim": {
+      "injected": 74,
+      "caught": 74,
+      "rate": 1.0
+    }
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "historian": {
+    "C101": {
+      "rows": 105120,
+      "start": "2025-10-01T00:00:00",
+      "end": "2026-09-30T23:55:00",
+      "irregular_steps": 0,
+      "missing_values": 0,
+      "flatlined_tags": [],
+      "saturated_at_limit": [
+        "steam_valve_op"
+      ],
+      "out_of_range": {}
+    },
+    "C201": {
+      "rows": 105120,
+      "start": "2025-10-01T00:00:00",
+      "end": "2026-09-30T23:55:00",
+      "irregular_steps": 0,
+      "missing_values": 0,
+      "flatlined_tags": [],
+      "saturated_at_limit": [],
+      "out_of_range": {}
+    },
+    "C301": {
+      "rows": 105120,
+      "start": "2025-10-01T00:00:00",
+      "end": "2026-09-30T23:55:00",
+      "irregular_steps": 0,
+      "missing_values": 0,
+      "flatlined_tags": [],
+      "saturated_at_limit": [],
+      "out_of_range": {}
+    },
+    "C401": {
+      "rows": 105120,
+      "start": "2025-10-01T00:00:00",
+      "end": "2026-09-30T23:55:00",
+      "irregular_steps": 0,
+      "missing_values": 0,
+      "flatlined_tags": [],
+      "saturated_at_limit": [],
+      "out_of_range": {}
+    },
+    "C501": {
+      "rows": 105120,
+      "start": "2025-10-01T00:00:00",
+      "end": "2026-09-30T23:55:00",
+      "irregular_steps": 0,
+      "missing_values": 0,
+      "flatlined_tags": [],
+      "saturated_at_limit": [],
+      "out_of_range": {}
+    },
+    "C601": {
+      "rows": 105120,
+      "start": "2025-10-01T00:00:00",
+      "end": "2026-09-30T23:55:00",
+      "irregular_steps": 0,
+      "missing_values": 0,
+      "flatlined_tags": [],
+      "saturated_at_limit": [
+        "steam_valve_op"
+      ],
+      "out_of_range": {}
+    }
+  },
+  "work_orders": {
+    "rows": 545,
+    "duplicate_ids": 0,
+    "missing_equipment": 0,
+    "closed_without_notes": 0,
+    "completed_before_created": 0
+  },
+  "shift_logs": {
+    "logs": 1460,
+    "items": 5921,
+    "duplicate_item_ids": 0,
+    "empty_items": 0,
+    "mean_items_per_log": 4.0554794520547945
+  },
+  "alarms": {
+    "rows": 7279,
+    "per_column": {
+      "C101": 778,
+      "C201": 4376,
+      "C301": 39,
+      "C401": 619,
+      "C501": 970,
+      "C601": 497
+    },
+    "chattering_tags": {
+      "FIC207": 1198,
+      "PDI209": 1022,
+      "PDI210": 963,
+      "AI215": 428,
+      "TIC212": 409
+    }
+  },
+  "lab": {
+    "rows": 12732,
+    "flagged_high": 698
+  },
+  "knowledge": {
+    "documents": 22,
+    "kinds": {
+      "article": 16,
+      "datasheet": 6
+    }
+  },
+  "blocking_issues": 0
+}

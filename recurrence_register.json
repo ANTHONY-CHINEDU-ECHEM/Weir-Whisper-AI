@@ -1,0 +1,578 @@
+[
+  {
+    "family_id": "FAMC101_E101",
+    "column": "C101",
+    "cause": "reboiler_fouling",
+    "cause_label": "Reboiler fouling limiting boilup",
+    "asset": "E101",
+    "occurrences": 1,
+    "episode_count": 2,
+    "episodes": [
+      "DE0047",
+      "DE0050"
+    ],
+    "first": "2026-04-14T18:00:00",
+    "last": "2026-04-24T23:50:00",
+    "mean_interval_days": null,
+    "total_cost_gbp": 994507.0,
+    "total_offspec_t": 27435.24,
+    "total_excess_steam_t": -1038.31,
+    "repair_work_orders": [
+      "WO410046"
+    ],
+    "recurring": false,
+    "minor_episodes": 0
+  },
+  {
+    "family_id": "FAMC201_FV207",
+    "column": "C201",
+    "cause": "steam_valve_stiction",
+    "cause_label": "Reboiler steam control valve stiction",
+    "asset": "FV207",
+    "occurrences": 4,
+    "episode_count": 5,
+    "episodes": [
+      "DE0011",
+      "DE0021",
+      "DE0034",
+      "DE0035",
+      "DE0049"
+    ],
+    "first": "2025-12-02T19:25:00",
+    "last": "2026-04-20T21:35:00",
+    "mean_interval_days": 46.363425925925924,
+    "total_cost_gbp": 747968.0,
+    "total_offspec_t": 13553.15,
+    "total_excess_steam_t": 55.02,
+    "repair_work_orders": [
+      "WO410007",
+      "WO410031",
+      "WO410039",
+      "WO410080"
+    ],
+    "recurring": true,
+    "minor_episodes": 2
+  },
+  {
+    "family_id": "FAMC301_TRAYS",
+    "column": "C301",
+    "cause": "tray_damage",
+    "cause_label": "Mechanical tray damage after an upset",
+    "asset": "C301",
+    "occurrences": 1,
+    "episode_count": 1,
+    "episodes": [
+      "DE0043"
+    ],
+    "first": "2026-03-20T20:55:00",
+    "last": "2026-03-20T20:55:00",
+    "mean_interval_days": null,
+    "total_cost_gbp": 720956.0,
+    "total_offspec_t": 15453.26,
+    "total_excess_steam_t": -115.58,
+    "repair_work_orders": [],
+    "recurring": false,
+    "minor_episodes": 0
+  },
+  {
+    "family_id": "FAMC401_PIC408",
+    "column": "C401",
+    "cause": "pressure_rise",
+    "cause_label": "Column pressure rise without temperature compensation",
+    "asset": "PIC408",
+    "occurrences": 2,
+    "episode_count": 4,
+    "episodes": [
+      "DE0003",
+      "DE0004",
+      "DE0016",
+      "DE0017"
+    ],
+    "first": "2025-10-27T20:15:00",
+    "last": "2026-01-01T20:30:00",
+    "mean_interval_days": 64.23263888888889,
+    "total_cost_gbp": 619205.0,
+    "total_offspec_t": 5298.58,
+    "total_excess_steam_t": -359.4,
+    "repair_work_orders": [],
+    "recurring": true,
+    "minor_episodes": 0
+  },
+  {
+    "family_id": "FAMC101_PIC108",
+    "column": "C101",
+    "cause": "pressure_rise",
+    "cause_label": "Column pressure rise without temperature compensation",
+    "asset": "PIC108",
+    "occurrences": 1,
+    "episode_count": 1,
+    "episodes": [
+      "DE0010"
+    ],
+    "first": "2025-12-01T18:20:00",
+    "last": "2025-12-01T18:20:00",
+    "mean_interval_days": null,
+    "total_cost_gbp": 524880.0,
+    "total_offspec_t": 14167.69,
+    "total_excess_steam_t": -291.66,
+    "repair_work_orders": [],
+    "recurring": false,
+    "minor_episodes": 0
+  },
+  {
+    "family_id": "FAMC601_E601",
+    "column": "C601",
+    "cause": "reboiler_fouling",
+    "cause_label": "Reboiler fouling limiting boilup",
+    "asset": "E601",
+    "occurrences": 1,
+    "episode_count": 2,
+    "episodes": [
+      "DE0060",
+      "DE0062"
+    ],
+    "first": "2026-06-22T08:45:00",
+    "last": "2026-06-29T10:50:00",
+    "mean_interval_days": null,
+    "total_cost_gbp": 418001.0,
+    "total_offspec_t": 14213.5,
+    "total_excess_steam_t": -181.67,
+    "repair_work_orders": [
+      "WO410086"
+    ],
+    "recurring": false,
+    "minor_episodes": 0
+  },
+  {
+    "family_id": "FAMC401_HIGHRATE",
+    "column": "C401",
+    "cause": "flooding",
+    "cause_label": "Jet flooding at high throughput",
+    "asset": "C401",
+    "occurrences": 1,
+    "episode_count": 1,
+    "episodes": [
+      "DE0058"
+    ],
+    "first": "2026-06-02T17:25:00",
+    "last": "2026-06-02T17:25:00",
+    "mean_interval_days": null,
+    "total_cost_gbp": 261545.0,
+    "total_offspec_t": 2218.54,
+    "total_excess_steam_t": -101.17,
+    "repair_work_orders": [],
+    "recurring": false,
+    "minor_episodes": 0
+  },
+  {
+    "family_id": "FAMC101_CONTAMINATION",
+    "column": "C101",
+    "cause": "foaming",
+    "cause_label": "Foaming from feed contamination",
+    "asset": "C101",
+    "occurrences": 1,
+    "episode_count": 1,
+    "episodes": [
+      "DE0019"
+    ],
+    "first": "2026-01-02T12:40:00",
+    "last": "2026-01-02T12:40:00",
+    "mean_interval_days": null,
+    "total_cost_gbp": 246695.0,
+    "total_offspec_t": 6365.9,
+    "total_excess_steam_t": 103.57,
+    "repair_work_orders": [],
+    "recurring": false,
+    "minor_episodes": 0
+  },
+  {
+    "family_id": "FAMC501_E503",
+    "column": "C501",
+    "cause": "subcooled_feed",
+    "cause_label": "Subcooled feed after loss of feed preheat",
+    "asset": "E503",
+    "occurrences": 2,
+    "episode_count": 2,
+    "episodes": [
+      "DE0018",
+      "DE0033"
+    ],
+    "first": "2026-01-02T05:10:00",
+    "last": "2026-02-07T13:30:00",
+    "mean_interval_days": 36.34722222222222,
+    "total_cost_gbp": 219830.0,
+    "total_offspec_t": 9893.44,
+    "total_excess_steam_t": 47.019999999999996,
+    "repair_work_orders": [
+      "WO410023"
+    ],
+    "recurring": true,
+    "minor_episodes": 0
+  },
+  {
+    "family_id": "FAMC101_HIGHRATE",
+    "column": "C101",
+    "cause": "flooding",
+    "cause_label": "Jet flooding at high throughput",
+    "asset": "C101",
+    "occurrences": 1,
+    "episode_count": 1,
+    "episodes": [
+      "DE0022"
+    ],
+    "first": "2026-01-16T12:15:00",
+    "last": "2026-01-16T12:15:00",
+    "mean_interval_days": null,
+    "total_cost_gbp": 151472.0,
+    "total_offspec_t": 4134.32,
+    "total_excess_steam_t": -121.75,
+    "repair_work_orders": [],
+    "recurring": false,
+    "minor_episodes": 0
+  },
+  {
+    "family_id": "FAMC401_TURNDOWN",
+    "column": "C401",
+    "cause": "turndown",
+    "cause_label": "Low vapour load during feed turndown",
+    "asset": "C401",
+    "occurrences": 6,
+    "episode_count": 6,
+    "episodes": [
+      "DE0044",
+      "DE0053",
+      "DE0055",
+      "DE0063",
+      "DE0071",
+      "DE0073"
+    ],
+    "first": "2026-03-31T09:10:00",
+    "last": "2026-09-14T19:25:00",
+    "mean_interval_days": 33.485416666666666,
+    "total_cost_gbp": 112031.0,
+    "total_offspec_t": 177.95999999999998,
+    "total_excess_steam_t": 1960.1299999999999,
+    "repair_work_orders": [
+      "WO410083",
+      "WO410097"
+    ],
+    "recurring": true,
+    "minor_episodes": 6
+  },
+  {
+    "family_id": "FAMC601_CONTAMINATION",
+    "column": "C601",
+    "cause": "foaming",
+    "cause_label": "Foaming from feed contamination",
+    "asset": "C601",
+    "occurrences": 1,
+    "episode_count": 1,
+    "episodes": [
+      "DE0045"
+    ],
+    "first": "2026-04-08T01:10:00",
+    "last": "2026-04-08T01:10:00",
+    "mean_interval_days": null,
+    "total_cost_gbp": 86074.0,
+    "total_offspec_t": 2814.49,
+    "total_excess_steam_t": 35.45,
+    "repair_work_orders": [],
+    "recurring": false,
+    "minor_episodes": 0
+  },
+  {
+    "family_id": "FAMC601_E603",
+    "column": "C601",
+    "cause": "subcooled_feed",
+    "cause_label": "Subcooled feed after loss of feed preheat",
+    "asset": "E603",
+    "occurrences": 1,
+    "episode_count": 1,
+    "episodes": [
+      "DE0065"
+    ],
+    "first": "2026-07-09T18:30:00",
+    "last": "2026-07-09T18:30:00",
+    "mean_interval_days": null,
+    "total_cost_gbp": 50513.0,
+    "total_offspec_t": 1690.49,
+    "total_excess_steam_t": -4.35,
+    "repair_work_orders": [],
+    "recurring": false,
+    "minor_episodes": 0
+  },
+  {
+    "family_id": "FAMC201_HIGHRATE",
+    "column": "C201",
+    "cause": "flooding",
+    "cause_label": "Jet flooding at high throughput",
+    "asset": "C201",
+    "occurrences": 2,
+    "episode_count": 2,
+    "episodes": [
+      "DE0015",
+      "DE0066"
+    ],
+    "first": "2025-12-26T00:10:00",
+    "last": "2026-07-14T18:20:00",
+    "mean_interval_days": 200.75694444444446,
+    "total_cost_gbp": 39920.0,
+    "total_offspec_t": 724.16,
+    "total_excess_steam_t": 1.96,
+    "repair_work_orders": [],
+    "recurring": true,
+    "minor_episodes": 0
+  },
+  {
+    "family_id": "FAMC601_TURNDOWN",
+    "column": "C601",
+    "cause": "turndown",
+    "cause_label": "Low vapour load during feed turndown",
+    "asset": "C601",
+    "occurrences": 2,
+    "episode_count": 2,
+    "episodes": [
+      "DE0014",
+      "DE0042"
+    ],
+    "first": "2025-12-17T12:40:00",
+    "last": "2026-03-17T07:30:00",
+    "mean_interval_days": 89.78472222222223,
+    "total_cost_gbp": 36825.0,
+    "total_offspec_t": 1090.3500000000001,
+    "total_excess_steam_t": 88.94,
+    "repair_work_orders": [],
+    "recurring": true,
+    "minor_episodes": 1
+  },
+  {
+    "family_id": "FAMC201_TURNDOWN",
+    "column": "C201",
+    "cause": "turndown",
+    "cause_label": "Low vapour load during feed turndown",
+    "asset": "C201",
+    "occurrences": 4,
+    "episode_count": 4,
+    "episodes": [
+      "DE0039",
+      "DE0054",
+      "DE0064",
+      "DE0074"
+    ],
+    "first": "2026-02-22T15:10:00",
+    "last": "2026-09-28T05:55:00",
+    "mean_interval_days": 72.53819444444444,
+    "total_cost_gbp": 18710.0,
+    "total_offspec_t": 150.36,
+    "total_excess_steam_t": 225.67999999999998,
+    "repair_work_orders": [
+      "WO410090"
+    ],
+    "recurring": true,
+    "minor_episodes": 6
+  },
+  {
+    "family_id": "FAMC501_HIGHRATE",
+    "column": "C501",
+    "cause": "flooding",
+    "cause_label": "Jet flooding at high throughput",
+    "asset": "C501",
+    "occurrences": 1,
+    "episode_count": 1,
+    "episodes": [
+      "DE0067"
+    ],
+    "first": "2026-07-16T12:45:00",
+    "last": "2026-07-16T12:45:00",
+    "mean_interval_days": null,
+    "total_cost_gbp": 12375.0,
+    "total_offspec_t": 661.73,
+    "total_excess_steam_t": -47.18,
+    "repair_work_orders": [],
+    "recurring": false,
+    "minor_episodes": 0
+  },
+  {
+    "family_id": "FAMC101_TURNDOWN",
+    "column": "C101",
+    "cause": "turndown",
+    "cause_label": "Low vapour load during feed turndown",
+    "asset": "C101",
+    "occurrences": 2,
+    "episode_count": 2,
+    "episodes": [
+      "DE0013",
+      "DE0057"
+    ],
+    "first": "2025-12-16T01:05:00",
+    "last": "2026-05-19T15:35:00",
+    "mean_interval_days": 154.60416666666666,
+    "total_cost_gbp": 9829.0,
+    "total_offspec_t": 54.41,
+    "total_excess_steam_t": 167.76,
+    "repair_work_orders": [],
+    "recurring": true,
+    "minor_episodes": 0
+  },
+  {
+    "family_id": "FAMC501_TURNDOWN",
+    "column": "C501",
+    "cause": "turndown",
+    "cause_label": "Low vapour load during feed turndown",
+    "asset": "C501",
+    "occurrences": 2,
+    "episode_count": 2,
+    "episodes": [
+      "DE0001",
+      "DE0012"
+    ],
+    "first": "2025-10-10T19:30:00",
+    "last": "2025-12-03T10:35:00",
+    "mean_interval_days": 53.62847222222222,
+    "total_cost_gbp": 5977.0,
+    "total_offspec_t": 0.0,
+    "total_excess_steam_t": 129.2,
+    "repair_work_orders": [],
+    "recurring": true,
+    "minor_episodes": 0
+  },
+  {
+    "family_id": "FAMC501_FV507",
+    "column": "C501",
+    "cause": "steam_valve_stiction",
+    "cause_label": "Reboiler steam control valve stiction",
+    "asset": "FV507",
+    "occurrences": 1,
+    "episode_count": 2,
+    "episodes": [
+      "DE0040",
+      "DE0041"
+    ],
+    "first": "2026-02-25T23:20:00",
+    "last": "2026-03-01T01:00:00",
+    "mean_interval_days": null,
+    "total_cost_gbp": 2286.0,
+    "total_offspec_t": 127.36,
+    "total_excess_steam_t": -11.15,
+    "repair_work_orders": [
+      "WO410060"
+    ],
+    "recurring": false,
+    "minor_episodes": 1
+  },
+  {
+    "family_id": "FAMC401_AI415",
+    "column": "C401",
+    "cause": "analyzer_fault",
+    "cause_label": "Online analyzer drift",
+    "asset": "AI415",
+    "occurrences": 1,
+    "episode_count": 1,
+    "episodes": [
+      "DE0032"
+    ],
+    "first": "2026-01-29T15:20:00",
+    "last": "2026-01-29T15:20:00",
+    "mean_interval_days": null,
+    "total_cost_gbp": 1239.0,
+    "total_offspec_t": 0.0,
+    "total_excess_steam_t": 26.78,
+    "repair_work_orders": [],
+    "recurring": false,
+    "minor_episodes": 0
+  },
+  {
+    "family_id": "FAMC301_TURNDOWN",
+    "column": "C301",
+    "cause": "turndown",
+    "cause_label": "Low vapour load during feed turndown",
+    "asset": "C301",
+    "occurrences": 1,
+    "episode_count": 2,
+    "episodes": [
+      "DE0036",
+      "DE0038"
+    ],
+    "first": "2026-02-16T05:10:00",
+    "last": "2026-02-22T05:15:00",
+    "mean_interval_days": null,
+    "total_cost_gbp": 838.0,
+    "total_offspec_t": 0.0,
+    "total_excess_steam_t": 18.11,
+    "repair_work_orders": [],
+    "recurring": false,
+    "minor_episodes": 0
+  },
+  {
+    "family_id": "FAMC201_AI215",
+    "column": "C201",
+    "cause": "analyzer_fault",
+    "cause_label": "Online analyzer drift",
+    "asset": "AI215",
+    "occurrences": 1,
+    "episode_count": 2,
+    "episodes": [
+      "DE0008",
+      "DE0009"
+    ],
+    "first": "2025-11-21T17:30:00",
+    "last": "2025-11-25T15:15:00",
+    "mean_interval_days": null,
+    "total_cost_gbp": 772.0,
+    "total_offspec_t": 0.0,
+    "total_excess_steam_t": 16.689999999999998,
+    "repair_work_orders": [
+      "WO410004"
+    ],
+    "recurring": false,
+    "minor_episodes": 0
+  },
+  {
+    "family_id": "FAMC301_AI315",
+    "column": "C301",
+    "cause": "analyzer_fault",
+    "cause_label": "Online analyzer drift",
+    "asset": "AI315",
+    "occurrences": 1,
+    "episode_count": 5,
+    "episodes": [
+      "DE0023",
+      "DE0025",
+      "DE0026",
+      "DE0027",
+      "DE0030"
+    ],
+    "first": "2026-01-18T23:45:00",
+    "last": "2026-01-25T08:20:00",
+    "mean_interval_days": null,
+    "total_cost_gbp": 268.0,
+    "total_offspec_t": 0.0,
+    "total_excess_steam_t": 5.77,
+    "repair_work_orders": [
+      "WO410037"
+    ],
+    "recurring": false,
+    "minor_episodes": 3
+  },
+  {
+    "family_id": "FAMC401_E403",
+    "column": "C401",
+    "cause": "subcooled_feed",
+    "cause_label": "Subcooled feed after loss of feed preheat",
+    "asset": "E403",
+    "occurrences": 1,
+    "episode_count": 1,
+    "episodes": [
+      "DE0046"
+    ],
+    "first": "2026-04-14T08:20:00",
+    "last": "2026-04-14T08:20:00",
+    "mean_interval_days": null,
+    "total_cost_gbp": -1073.0,
+    "total_offspec_t": 0.0,
+    "total_excess_steam_t": -23.19,
+    "repair_work_orders": [],
+    "recurring": false,
+    "minor_episodes": 0
+  }
+]

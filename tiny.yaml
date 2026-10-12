@@ -1,0 +1,35 @@
+# Minimal profile for the automated end to end test (runs in about a minute).
+
+simulation:
+  start: "2026-01-01 00:00"
+  end: "2026-03-15 23:55"
+  reference_days: 14
+  min_gap_days: 2.0
+  columns: [C201, C401]
+  schedule:
+    C201: {steam_valve_stiction: 1, turndown: 1, analyzer_fault: 1}
+    C401: {turndown: 2, pressure_rise: 1}
+
+text:
+  background_work_orders: 40
+
+detector:
+  reference_days: 12
+  cv_folds: 2
+  train_end: "2026-02-20"
+  max_iter: 40
+  max_train_rows: 40000
+
+retrieval:
+  lsa_components: 48
+
+paths:
+  raw: data/tiny/raw
+  processed: data/tiny/processed
+  knowledge: data/tiny/raw/knowledge
+  models: outputs/tiny/models
+  graph: outputs/tiny/graph
+  index: outputs/tiny/index
+  reports: outputs/tiny/reports
+  metrics: outputs/tiny/metrics
+  figures: outputs/tiny/figures

@@ -1,0 +1,253 @@
+# Plant definition for the Brackmere Olefins and Refining Complex (fictional site).
+# Every column is described by its design basis. Hole area and flooding capacity
+# coefficients are derived by the simulator so that the design weep margin and
+# design flood fraction below are honoured exactly at 100 percent of design feed.
+
+site:
+  name: Brackmere Olefins and Refining Complex
+  timezone: Europe/London
+  areas:
+    AREA2: [C101, C201, C301]
+    AREA3: [C401, C501, C601]
+
+economics:
+  currency: GBP
+  lp_steam_price_per_t: 31.5        # GBP per tonne of LP steam
+  steam_co2_t_per_t: 0.205          # tCO2e emitted per tonne of LP steam raised
+  carbon_price_per_t: 72.0          # GBP per tCO2e (UK ETS planning assumption)
+
+columns:
+  C101:
+    unit: 1
+    name: Debutaniser
+    service: Separates C4 LPG overhead from stabilised naphtha bottoms
+    tray_type: moving valve
+    n_trays: 36
+    feed_tray: 16                   # counted from the top
+    diameter_m: 2.6
+    tray_spacing_m: 0.61
+    weir_height_mm: 50
+    hole_diameter_mm: 12.7
+    weep_k2_offset: -2.5            # valve trays hold liquid better than sieve trays
+    design_weep_margin: 1.42
+    design_flood: 0.80
+    rho_liquid: 560.0
+    rho_vapour_design: 21.0
+    surface_tension_mN_m: 9.5
+    pressure_design_barg: 10.5
+    latent_heat_kj_kg: 330.0
+    feed_cp_kj_kg_k: 2.55
+    feed_bubble_temp_c: 118.0
+    feed_temp_design_c: 116.0
+    feed_design_t_h: 118.0
+    distillate_fraction: 0.31
+    reflux_ratio_design: 1.9
+    murphree_eff: 0.78
+    sep_sensitivity_top: 3.2        # factor rise in top impurity when tray efficiency falls by 0.20
+    sep_sensitivity_bottom: 3.0
+    top_impurity_design: 0.76       # mol percent C5 in LPG
+    top_impurity_spec: 1.00
+    bottom_impurity_design: 0.532    # mol percent C4 in naphtha (RVP driver)
+    bottom_impurity_spec: 0.70
+    top_temp_design_c: 61.0
+    sens_temp_design_c: 128.0
+    bottom_temp_design_c: 178.0
+    steam_latent_kj_kg: 2085.0
+    reboiler_capacity_factor: 1.30
+    chest_pressure_design_barg: 2.4
+    downgrade_price_per_t: 38.0     # GBP per tonne of off spec product reprocessed
+  C201:
+    unit: 2
+    name: Depropaniser
+    service: Separates propane and propylene overhead from C4 bottoms
+    tray_type: sieve
+    n_trays: 45
+    feed_tray: 22
+    diameter_m: 1.9
+    tray_spacing_m: 0.61
+    weir_height_mm: 50
+    hole_diameter_mm: 12.7
+    weep_k2_offset: 0.0
+    design_weep_margin: 1.30
+    design_flood: 0.79
+    rho_liquid: 495.0
+    rho_vapour_design: 34.0
+    surface_tension_mN_m: 5.8
+    pressure_design_barg: 16.8
+    latent_heat_kj_kg: 300.0
+    feed_cp_kj_kg_k: 2.70
+    feed_bubble_temp_c: 82.0
+    feed_temp_design_c: 80.0
+    feed_design_t_h: 64.0
+    distillate_fraction: 0.38
+    reflux_ratio_design: 2.6
+    murphree_eff: 0.74
+    sep_sensitivity_top: 3.6
+    sep_sensitivity_bottom: 3.1
+    top_impurity_design: 0.912
+    top_impurity_spec: 1.20
+    bottom_impurity_design: 0.684
+    bottom_impurity_spec: 0.90
+    top_temp_design_c: 46.0
+    sens_temp_design_c: 88.0
+    bottom_temp_design_c: 109.0
+    steam_latent_kj_kg: 2085.0
+    reboiler_capacity_factor: 1.30
+    chest_pressure_design_barg: 2.6
+    downgrade_price_per_t: 55.0
+  C301:
+    unit: 3
+    name: Deethaniser
+    service: Removes C2 overhead ahead of the C3 splitter
+    tray_type: moving valve
+    n_trays: 40
+    feed_tray: 18
+    diameter_m: 1.2
+    tray_spacing_m: 0.61
+    weir_height_mm: 50
+    hole_diameter_mm: 12.7
+    weep_k2_offset: -2.0
+    design_weep_margin: 1.55
+    design_flood: 0.78
+    rho_liquid: 430.0
+    rho_vapour_design: 48.0
+    surface_tension_mN_m: 3.9
+    pressure_design_barg: 26.5
+    latent_heat_kj_kg: 280.0
+    feed_cp_kj_kg_k: 2.80
+    feed_bubble_temp_c: 52.0
+    feed_temp_design_c: 50.0
+    feed_design_t_h: 41.0
+    distillate_fraction: 0.18
+    reflux_ratio_design: 3.4
+    murphree_eff: 0.72
+    sep_sensitivity_top: 3.0
+    sep_sensitivity_bottom: 3.4
+    top_impurity_design: 1.14
+    top_impurity_spec: 1.50
+    bottom_impurity_design: 0.228
+    bottom_impurity_spec: 0.30
+    top_temp_design_c: -12.0
+    sens_temp_design_c: 41.0
+    bottom_temp_design_c: 67.0
+    steam_latent_kj_kg: 2085.0
+    reboiler_capacity_factor: 1.30
+    chest_pressure_design_barg: 2.2
+    downgrade_price_per_t: 47.0
+  C401:
+    unit: 4
+    name: C3 Splitter
+    service: Splits polymer grade propylene overhead from propane bottoms
+    tray_type: sieve
+    n_trays: 96
+    feed_tray: 52
+    diameter_m: 3.4
+    tray_spacing_m: 0.46
+    weir_height_mm: 50
+    hole_diameter_mm: 12.7
+    weep_k2_offset: 0.0
+    design_weep_margin: 1.33
+    design_flood: 0.81
+    rho_liquid: 470.0
+    rho_vapour_design: 33.0
+    surface_tension_mN_m: 4.6
+    pressure_design_barg: 17.2
+    latent_heat_kj_kg: 330.0
+    feed_cp_kj_kg_k: 2.75
+    feed_bubble_temp_c: 47.0
+    feed_temp_design_c: 45.0
+    feed_design_t_h: 36.0
+    distillate_fraction: 0.62
+    reflux_ratio_design: 12.5
+    murphree_eff: 0.82
+    sep_sensitivity_top: 4.2
+    sep_sensitivity_bottom: 3.5
+    top_impurity_design: 0.38      # mol percent propane in polymer grade propylene
+    top_impurity_spec: 0.50
+    bottom_impurity_design: 3.04
+    bottom_impurity_spec: 4.00
+    top_temp_design_c: 43.0
+    sens_temp_design_c: 49.0
+    bottom_temp_design_c: 55.0
+    steam_latent_kj_kg: 2250.0     # quench water and LP steam blend
+    reboiler_capacity_factor: 1.25
+    chest_pressure_design_barg: 1.6
+    downgrade_price_per_t: 120.0   # polymer grade downgraded to chemical grade
+  C501:
+    unit: 5
+    name: Naphtha Splitter
+    service: Splits light naphtha overhead from heavy reformer feed
+    tray_type: fixed valve
+    n_trays: 32
+    feed_tray: 15
+    diameter_m: 2.9
+    tray_spacing_m: 0.61
+    weir_height_mm: 50
+    hole_diameter_mm: 12.7
+    weep_k2_offset: -1.2
+    design_weep_margin: 1.31
+    design_flood: 0.80
+    rho_liquid: 640.0
+    rho_vapour_design: 6.5
+    surface_tension_mN_m: 14.0
+    pressure_design_barg: 2.1
+    latent_heat_kj_kg: 315.0
+    feed_cp_kj_kg_k: 2.45
+    feed_bubble_temp_c: 128.0
+    feed_temp_design_c: 125.0
+    feed_design_t_h: 135.0
+    distillate_fraction: 0.36
+    reflux_ratio_design: 1.6
+    murphree_eff: 0.76
+    sep_sensitivity_top: 3.0
+    sep_sensitivity_bottom: 2.8
+    top_impurity_design: 1.52
+    top_impurity_spec: 2.00
+    bottom_impurity_design: 1.216
+    bottom_impurity_spec: 1.60
+    top_temp_design_c: 88.0
+    sens_temp_design_c: 141.0
+    bottom_temp_design_c: 172.0
+    steam_latent_kj_kg: 1950.0     # MP steam
+    reboiler_capacity_factor: 1.30
+    chest_pressure_design_barg: 9.5
+    downgrade_price_per_t: 22.0
+  C601:
+    unit: 6
+    name: Condensate Stabiliser
+    service: Strips light ends from field condensate to meet vapour pressure
+    tray_type: sieve
+    n_trays: 28
+    feed_tray: 6
+    diameter_m: 1.4
+    tray_spacing_m: 0.61
+    weir_height_mm: 50
+    hole_diameter_mm: 12.7
+    weep_k2_offset: 0.0
+    design_weep_margin: 1.40
+    design_flood: 0.78
+    rho_liquid: 610.0
+    rho_vapour_design: 13.0
+    surface_tension_mN_m: 11.0
+    pressure_design_barg: 7.0
+    latent_heat_kj_kg: 320.0
+    feed_cp_kj_kg_k: 2.50
+    feed_bubble_temp_c: 96.0
+    feed_temp_design_c: 93.0
+    feed_design_t_h: 88.0
+    distillate_fraction: 0.14
+    reflux_ratio_design: 0.9
+    murphree_eff: 0.70
+    sep_sensitivity_top: 2.6
+    sep_sensitivity_bottom: 3.0
+    top_impurity_design: 3.8
+    top_impurity_spec: 5.0
+    bottom_impurity_design: 1.216      # RVP proxy, mol percent C4 minus in bottoms
+    bottom_impurity_spec: 1.6
+    top_temp_design_c: 54.0
+    sens_temp_design_c: 132.0
+    bottom_temp_design_c: 168.0
+    steam_latent_kj_kg: 1950.0
+    reboiler_capacity_factor: 1.30
+    chest_pressure_design_barg: 9.0
+    downgrade_price_per_t: 30.0

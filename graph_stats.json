@@ -1,0 +1,33 @@
+{
+  "nodes": 14832,
+  "edges": 39551,
+  "node_kinds": {
+    "alarm": 7279,
+    "shift_log": 5921,
+    "lab": 698,
+    "work_order": 545,
+    "equipment": 90,
+    "instrument": 84,
+    "episode": 74,
+    "operator_action": 63,
+    "knowledge": 22,
+    "symptom": 16,
+    "gamma_scan": 11,
+    "moc": 11,
+    "cause": 9,
+    "column": 6,
+    "area": 2,
+    "site": 1
+  },
+  "edge_relations": {
+    "ON_ASSET": 16494,
+    "OVERLAPS": 10959,
+    "MENTIONS": 10674,
+    "REPORTS": 1051,
+    "PART_OF": 182,
+    "DETECTED_ON": 74,
+    "PRECEDES": 68,
+    "INDICATES": 28,
+    "DESCRIBES": 21
+  }
+}

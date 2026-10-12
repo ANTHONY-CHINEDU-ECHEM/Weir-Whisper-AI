@@ -1,0 +1,35 @@
+# Small smoke profile used by the test suite and for a fast first run.
+# Values here are merged on top of default.yaml.
+
+simulation:
+  start: "2026-01-01 00:00"
+  end: "2026-04-30 23:55"
+  reference_days: 18
+  columns: [C201, C301, C401]
+  schedule:
+    C201: {steam_valve_stiction: 2, turndown: 1, flooding: 1}
+    C301: {tray_damage: 1, analyzer_fault: 1}
+    C401: {turndown: 2, pressure_rise: 1}
+
+text:
+  background_work_orders: 80
+
+detector:
+  reference_days: 16
+  cv_folds: 3
+  train_end: "2026-03-10"
+  max_iter: 120
+
+retrieval:
+  lsa_components: 64
+
+paths:
+  raw: data/quick/raw
+  processed: data/quick/processed
+  knowledge: data/quick/raw/knowledge
+  models: outputs/quick/models
+  graph: outputs/quick/graph
+  index: outputs/quick/index
+  reports: outputs/quick/reports
+  metrics: outputs/quick/metrics
+  figures: outputs/quick/figures

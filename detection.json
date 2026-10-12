@@ -1,0 +1,280 @@
+{
+  "protocols": {
+    "oof": {
+      "threshold": 0.95,
+      "test_period": {
+        "roc_auc": 1.0,
+        "average_precision": 0.9993,
+        "precision": 0.9941,
+        "recall": 0.9787,
+        "f1": 0.9864,
+        "positives": 10533,
+        "samples": 210816
+      },
+      "full_year": {
+        "roc_auc": 0.9996,
+        "average_precision": 0.9954,
+        "precision": 0.9585,
+        "recall": 0.9773,
+        "f1": 0.9678,
+        "positives": 49381,
+        "samples": 630720
+      }
+    },
+    "forward": {
+      "threshold": 0.95,
+      "test_period": {
+        "roc_auc": 0.9999,
+        "average_precision": 0.9984,
+        "precision": 0.9942,
+        "recall": 0.9371,
+        "f1": 0.9648,
+        "positives": 10533,
+        "samples": 210816
+      },
+      "full_year": {
+        "roc_auc": 1.0,
+        "average_precision": 0.9998,
+        "precision": 0.9957,
+        "recall": 0.9866,
+        "f1": 0.9911,
+        "positives": 49381,
+        "samples": 630720
+      }
+    },
+    "loco": {
+      "threshold": 0.95,
+      "test_period": {
+        "roc_auc": 0.9948,
+        "average_precision": 0.8636,
+        "precision": 0.8761,
+        "recall": 0.3605,
+        "f1": 0.5108,
+        "positives": 10533,
+        "samples": 210816
+      },
+      "full_year": {
+        "roc_auc": 0.9909,
+        "average_precision": 0.8618,
+        "precision": 0.8501,
+        "recall": 0.3603,
+        "f1": 0.5061,
+        "positives": 49381,
+        "samples": 630720
+      }
+    },
+    "physics_rule": {
+      "threshold": 0.15,
+      "test_period": {
+        "roc_auc": 0.9987,
+        "average_precision": 0.9828,
+        "precision": 0.8245,
+        "recall": 0.9799,
+        "f1": 0.8955,
+        "positives": 10533,
+        "samples": 210816
+      },
+      "full_year": {
+        "roc_auc": 0.9975,
+        "average_precision": 0.9858,
+        "precision": 0.89,
+        "recall": 0.9712,
+        "f1": 0.9288,
+        "positives": 49381,
+        "samples": 630720
+      }
+    },
+    "isolation_forest": {
+      "threshold": 0.55,
+      "test_period": {
+        "roc_auc": 0.9863,
+        "average_precision": 0.694,
+        "precision": 0.627,
+        "recall": 0.9605,
+        "f1": 0.7587,
+        "positives": 10533,
+        "samples": 210816
+      },
+      "full_year": {
+        "roc_auc": 0.9802,
+        "average_precision": 0.6587,
+        "precision": 0.6716,
+        "recall": 0.9564,
+        "f1": 0.7891,
+        "positives": 49381,
+        "samples": 630720
+      }
+    }
+  },
+  "leave_one_column_out": {
+    "C101": {
+      "loco_ap": 0.9715,
+      "oof_ap": 0.9955
+    },
+    "C201": {
+      "loco_ap": 0.9475,
+      "oof_ap": 0.9894
+    },
+    "C301": {
+      "loco_ap": 0.9896,
+      "oof_ap": 0.999
+    },
+    "C401": {
+      "loco_ap": 0.9938,
+      "oof_ap": 0.9959
+    },
+    "C501": {
+      "loco_ap": 0.9564,
+      "oof_ap": 0.9926
+    },
+    "C601": {
+      "loco_ap": 0.998,
+      "oof_ap": 0.9989
+    }
+  },
+  "multiclass_test": {
+    "labels": [
+      "normal",
+      "weeping",
+      "flooding",
+      "foaming",
+      "analyzer_fault"
+    ],
+    "confusion_matrix": [
+      [
+        198974,
+        183,
+        19,
+        6,
+        1
+      ],
+      [
+        237,
+        10296,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1100,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "classes_present_in_test": [
+      "normal",
+      "weeping",
+      "flooding"
+    ],
+    "macro_f1_present_classes": 0.9901,
+    "per_class_f1": {
+      "normal": 0.9989,
+      "weeping": 0.98,
+      "flooding": 0.9914
+    }
+  },
+  "multiclass_full_year_oof": {
+    "macro_f1": 0.9587,
+    "per_class_f1": {
+      "normal": 0.9959,
+      "weeping": 0.9498,
+      "flooding": 0.9855,
+      "foaming": 0.9831,
+      "analyzer_fault": 0.8789
+    },
+    "confusion_matrix": [
+      [
+        569585,
+        3828,
+        53,
+        25,
+        32
+      ],
+      [
+        543,
+        48816,
+        0,
+        0,
+        22
+      ],
+      [
+        3,
+        0,
+        1909,
+        0,
+        0
+      ],
+      [
+        17,
+        0,
+        0,
+        1224,
+        0
+      ],
+      [
+        197,
+        768,
+        0,
+        0,
+        3698
+      ]
+    ]
+  },
+  "event_level": {
+    "weeping_scenarios_with_material_weeping": 27,
+    "scenarios_detected": 27,
+    "scenario_recall": 1.0,
+    "detected_weeping_episodes": 54,
+    "episode_precision": 0.8889,
+    "unscheduled_true_weeping_episodes": 15,
+    "false_alarm_episodes": 6,
+    "false_alarms_per_column_month": 0.083,
+    "onset_delay_hours_median": 0.08,
+    "onset_delay_hours_p90": 1.2,
+    "per_cause": {
+      "turndown": {
+        "scenarios": 13,
+        "detected": 13
+      },
+      "steam_valve_stiction": {
+        "scenarios": 6,
+        "detected": 6
+      },
+      "reboiler_fouling": {
+        "scenarios": 2,
+        "detected": 2
+      },
+      "tray_damage": {
+        "scenarios": 1,
+        "detected": 1
+      },
+      "pressure_rise": {
+        "scenarios": 2,
+        "detected": 2
+      },
+      "subcooled_feed": {
+        "scenarios": 3,
+        "detected": 3
+      }
+    },
+    "lookalike_scenarios": 10,
+    "lookalike_scenarios_detected_as_lookalike": 10,
+    "lookalike_scenarios_mistaken_for_weeping": 1
+  }
+}

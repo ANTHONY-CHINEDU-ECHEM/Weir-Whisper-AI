@@ -1,0 +1,9 @@
+{
+  "pairs_true_positive": 35,
+  "pairs_false_positive": 0,
+  "pairs_false_negative": 0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1": 1.0,
+  "true_recurring_families": 10
+}

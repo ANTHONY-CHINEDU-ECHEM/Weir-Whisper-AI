@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "weir_whisper_ai"
+version = "1.0.0"
+description = "Multi agent GraphRAG investigator for tray weeping and efficiency loss in distillation columns"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.26",
+  "pandas>=2.1",
+  "pyarrow>=14",
+  "scipy>=1.11",
+  "scikit-learn>=1.4",
+  "networkx>=3.2",
+  "matplotlib>=3.8",
+  "pyyaml>=6.0",
+  "pydantic>=2.5",
+  "fastapi>=0.110",
+  "uvicorn>=0.27",
+  "httpx>=0.27",
+  "pytest>=8.0",
+]
+
+[project.optional-dependencies]
+llm = ["anthropic>=0.40"]
+sbert = ["sentence-transformers>=2.6"]
+
+[tool.setuptools.packages.find]
+include = ["weir_whisper*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
