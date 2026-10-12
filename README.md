@@ -1,10 +1,159 @@
 # Weir Whisper AI
 
 ### Multi agent GraphRAG investigator for tray weeping and separation efficiency loss in distillation columns
+# Weir Whisper AI: System Architecture
 
-<p align="center">
-  <img src="docs/figures/architecture.png" width="100%" alt="Weir Whisper AI architecture">
-</p>
+> Evidence grounded investigation assistant for distillation column operations. Plant signals and records are fused into a temporal knowledge graph, retrieved through hybrid GraphRAG, reasoned over by specialist agents, and published only after every claim is verified against cited evidence.
+
+## 1. End to End Architecture
+
+```mermaid
+flowchart LR
+    subgraph L1["① Plant Data Ingestion"]
+        direction TB
+        D1["Process Historian<br/><sub>5 minute resolution · 20 tags per column</sub>"]
+        D2["Alarms and Operator Actions"]
+        D3["Shift Logs<br/><sub>free text</sub>"]
+        D4["Work Orders · Lab Results<br/>Gamma Scans · MOCs"]
+        D5["Engineering Library"]
+    end
+
+    subgraph L2["② Signal Analytics"]
+        direction TB
+        S1["Hydraulic Soft Sensor<br/><sub>weep margin · flood · ΔP</sub>"]
+        S2["Normal Behaviour Models"]
+        S3["Gradient Boosted Detector<br/><sub>5 fault classes</sub>"]
+        S4["Episode Segmentation"]
+        S5["Cost and Efficiency Model"]
+        S1 --> S2 --> S3 --> S4 --> S5
+    end
+
+    subgraph L3["③ Temporal Knowledge Graph"]
+        direction TB
+        K1["Entities<br/><sub>assets · tags · records · symptoms · causes · episodes</sub>"]
+        K2["Entity Linking<br/><sub>alias resolution</sub>"]
+        K3["Temporal OVERLAPS Edges"]
+        K4["Symptom to Cause Weights"]
+    end
+
+    subgraph L4["④ Hybrid GraphRAG Retrieval"]
+        direction TB
+        R1["BM25<br/><sub>lexical</sub>"]
+        R2["LSA<br/><sub>dense</sub>"]
+        R3["Graph and Time<br/><sub>structural</sub>"]
+        R4["Domain Knowledge"]
+        RF(["Reciprocal Rank Fusion"])
+        RR["Learned Linear Reranker"]
+        R1 & R2 & R3 & R4 --> RF --> RR
+    end
+
+    subgraph L5["⑤ Agent Reasoning"]
+        direction TB
+        A1["Signal Analyst"]
+        A2["Records Analyst"]
+        A3["Root Cause Agent<br/><sub>Bayesian over 9 hypotheses</sub>"]
+        A4["Impact and Recurrence Agent"]
+        A1 & A2 --> A3 --> A4
+    end
+
+    subgraph L6["⑥ Report Writer"]
+        direction TB
+        W1["Offline Templates<br/><sub>default</sub>"]
+        W2["Claude via Anthropic API<br/><sub>optional</sub>"]
+        W3["Every claim cites<br/>evidence IDs"]
+        W1 -.->|or| W2
+        W1 & W2 --> W3
+    end
+
+    subgraph L7["⑦ Verification Gate"]
+        direction TB
+        V1{"Citation exists?"}
+        V2{"Citation inside<br/>episode window?"}
+        V3{"Numbers match<br/>fact registry?"}
+        V4["Unsupported claims<br/>removed"]
+        V1 -->|yes| V2 -->|yes| V3
+        V1 & V2 & V3 -->|no| V4
+    end
+
+    subgraph L8["⑧ Outputs"]
+        direction TB
+        O1["Investigation Reports<br/><sub>Markdown · JSON</sub>"]
+        O2["Recurrence Register"]
+        O3["HTML Register"]
+        O4["REST API and Q&A"]
+    end
+
+    L1 ==> L2 ==> L3 ==> L4 ==> L5 ==> L6 ==> L7 ==> L8
+
+    classDef ingest  fill:#EAF2FD,stroke:#2F6FDB,color:#0B2A5B
+    classDef analyt  fill:#FDEEE8,stroke:#E0632E,color:#5A1E05
+    classDef know    fill:#E6F6EF,stroke:#1F9D6B,color:#0B3D29
+    classDef retr    fill:#FEF5E1,stroke:#E0A01B,color:#4D3400
+    classDef agent   fill:#F0ECFC,stroke:#6A4BD8,color:#24145E
+    classDef write   fill:#FCEDF4,stroke:#D9679A,color:#561A35
+    classDef verify  fill:#FCEAEA,stroke:#D64545,color:#561313
+    classDef out     fill:#E9F5E9,stroke:#2E8B3A,color:#0F3814
+
+    class D1,D2,D3,D4,D5 ingest
+    class S1,S2,S3,S4,S5 analyt
+    class K1,K2,K3,K4 know
+    class R1,R2,R3,R4,RF,RR retr
+    class A1,A2,A3,A4 agent
+    class W1,W2,W3 write
+    class V1,V2,V3,V4 verify
+    class O1,O2,O3,O4 out
+```
+
+## 2. Investigation Request Lifecycle
+
+```mermaid
+sequenceDiagram
+    autonumber
+    actor U as Engineer or API Client
+    participant API as REST API
+    participant SA as Signal Analytics
+    participant KG as Knowledge Graph
+    participant RAG as Hybrid GraphRAG
+    participant AG as Agents
+    participant WR as Writer
+    participant VF as Verifier
+
+    U->>API: Investigate column or episode
+    API->>SA: Fetch episode and soft sensor features
+    SA-->>API: Episode window, fault class, cost impact
+    API->>RAG: Query with episode context
+    RAG->>KG: Graph and temporal traversal
+    KG-->>RAG: Linked entities and OVERLAPS edges
+    RAG-->>AG: Fused, reranked evidence set
+    AG->>AG: Posterior over 9 root cause hypotheses
+    AG-->>WR: Findings with evidence IDs
+    WR-->>VF: Draft report with cited claims
+    VF->>VF: Check existence, window, fact registry
+    VF-->>API: Verified report, unsupported claims stripped
+    API-->>U: Markdown or JSON report plus register update
+```
+
+## 3. Layer Reference
+
+| # | Layer | Key Components | Responsibility |
+|---|-------|----------------|----------------|
+| ① | **Plant Data** | Historian (5 minute, 20 tags per column), alarms and operator actions, shift logs, work orders, lab, gamma scans, MOCs, engineering library | Unified ingestion of structured time series and unstructured operational records |
+| ② | **Signal Analytics** | Hydraulic soft sensor (weep margin, flood, ΔP), normal behaviour models, gradient boosted detector (5 classes), episode segmentation, cost and efficiency model | Turns raw signals into classified, time bounded fault episodes with economic impact |
+| ③ | **Knowledge Graph** | Assets, tags, records, symptoms, causes, episodes; alias based entity linking; temporal OVERLAPS edges; symptom to cause weights | Connects signals and documents through shared entities and time |
+| ④ | **Hybrid GraphRAG** | BM25, LSA, graph and time, knowledge channels feeding reciprocal rank fusion and a learned linear reranker | High recall, high precision evidence retrieval across four complementary channels |
+| ⑤ | **Agents** | Signal analyst, records analyst, root cause (Bayesian, 9 hypotheses), impact and recurrence | Specialist reasoning that converges on a ranked, probabilistic diagnosis |
+| ⑥ | **Writer** | Offline templates (default) or Claude via Anthropic API | Produces narrative reports where every claim cites evidence IDs |
+| ⑦ | **Verifier** | Citation existence, citation inside window, numeric fact registry match | Hallucination guard: unsupported claims are removed before release |
+| ⑧ | **Outputs** | Investigation reports (Markdown, JSON), recurrence register, HTML register, REST API and Q&A | Delivery to engineers, dashboards and downstream systems |
+
+## 4. Design Principles
+
+* **Evidence first generation:** no claim leaves the system without a traceable evidence ID.
+* **Deterministic by default:** the offline template writer runs without network access; the LLM writer is an optional enhancement.
+* **Time aware retrieval:** temporal OVERLAPS edges ensure evidence is drawn from the correct episode window.
+* **Probabilistic diagnosis:** root cause is expressed as a posterior over hypotheses, not a single unqualified answer.
+* **Verification as a hard gate:** the verifier is the final stage before any output, not an optional check.
+
 
 <table>
 <tr><td><b>Domain</b></td><td>Refining and petrochemicals, distillation operations, process reliability</td></tr>
@@ -123,13 +272,13 @@ Scenarios are placed after a 24 day fault free commissioning window, never overl
 The ground truth folder is read only by the detector (as labelled history) and the evaluation suite. Nothing in the investigation path can see it.
 
 <p align="center">
-  <img src="docs/figures/year_overview_c201.png" width="100%" alt="A year of C201 data with scenario windows">
+  <img width="1636" height="938" alt="year_overview_c201" src="https://github.com/user-attachments/assets/18399bfb-2699-480b-a2a3-55a53da84d38" />
 </p>
 
 The year on C201 shows why this is hard. Four stiction episodes hide in steam noise that looks much like normal operation at this scale, the differential pressure transmitter drifts upward over the year, and the two turndowns are only obvious because feed drops. The stripping section dP residual is the cleanest single signal, but it moves for flooding and transmitter drift as well.
 
 <p align="center">
-  <img src="docs/figures/cause_signatures.png" width="100%" alt="Fingerprints of four weeping causes">
+  <img width="1936" height="1109" alt="cause_signatures" src="https://github.com/user-attachments/assets/0d11acd4-8dd5-4398-a405-f4e3fc084bc0" />
 </p>
 
 Each cause leaves its own fingerprint once you look at the right tags: the sawtooth valve output against square wave steam flow for stiction, the collapse of both section dP values at turndown, the valve climbing for weeks and pinning at 100 percent before a fouled reboiler gives up, and the rectifying section starving while the stripping section holds when the feed goes cold. The shaded bands are the true weeping periods from the simulator.
@@ -200,7 +349,7 @@ All numbers below come from `python run.py all` with the default profile and see
 ### Detection
 
 <p align="center">
-  <img src="docs/figures/detection_pr.png" width="62%" alt="Precision recall on the held out period">
+ <img width="982" height="763" alt="detection_pr" src="https://github.com/user-attachments/assets/20ca1e5c-0c94-4c56-aeca-7fae95af708a" />
 </p>
 
 <table>
@@ -230,7 +379,7 @@ The fifteen unscheduled detections deserve a word. The C401 splitter and C201 de
 ### Root cause
 
 <p align="center">
-  <img src="docs/figures/root_cause_confusion.png" width="55%" alt="Root cause confusion matrix">
+  <img width="960" height="961" alt="root_cause_confusion" src="https://github.com/user-attachments/assets/c040a7f2-12ca-48d7-a15e-ea671f0af288" />
 </p>
 
 <table>
@@ -246,7 +395,7 @@ The ablation is the interesting part. Hydraulic signals alone miss the cases whe
 ### Impact
 
 <p align="center">
-  <img src="docs/figures/cost_parity.png" width="58%" alt="Estimated against true cost">
+  <img width="947" height="833" alt="cost_parity" src="https://github.com/user-attachments/assets/c3423252-bd8d-4deb-9673-be63a63142d5" />
 </p>
 
 <table>
@@ -265,7 +414,7 @@ Valve stiction, tray damage and subcooled feed are priced within one percent in 
 ### Retrieval
 
 <p align="center">
-  <img src="docs/figures/retrieval_ablation.png" width="75%" alt="Retrieval ablation">
+  <img width="1181" height="686" alt="retrieval_ablation" src="https://github.com/user-attachments/assets/067dacd1-b6d9-496a-9041-a4dc5bf1d924" />
 </p>
 
 Each true scenario becomes a plain question ("why did C201 lose separation efficiency between these dates") and is scored against the evidence map of every human record that scenario produced. Capped recall divides by the smaller of the relevant set and k, so long incidents with hundreds of records are not punished for the size of their evidence.
@@ -303,11 +452,11 @@ The single number change that escaped was a swap onto another value the same sen
 ## What the investigations found
 
 <p align="center">
-  <img src="docs/figures/cost_by_cause.png" width="70%" alt="Cost by diagnosed cause">
+  <img width="1187" height="671" alt="cost_by_cause" src="https://github.com/user-attachments/assets/2af8ecfe-9a1e-4814-8024-d1b71dce1254" />
 </p>
 
 <p align="center">
-  <img src="docs/figures/recurrence_timeline.png" width="100%" alt="Recurrence timeline">
+  <img width="1709" height="706" alt="recurrence_timeline" src="https://github.com/user-attachments/assets/17eb1a36-24f7-4ed9-baa2-e671df9fb29b" />
 </p>
 
 **Insight 1. The expensive causes are the slow ones.** Reboiler fouling is the costliest diagnosed cause on the site (GBP 1.41 million), and the C101 reboiler alone is the most expensive asset of the year (GBP 0.99 million). The valve output climbs for weeks before the trays weep, so by the time a dP alarm fires the money is already gone. The reboiler heat transfer index computed by the soft sensor fell five percent below its reference 50 days (C101) and 31 days (C601) before the first weeping sample, which is the window in which a clean could have been planned.
@@ -345,7 +494,7 @@ Every investigation is written as Markdown and JSON in `outputs/reports`, and ro
 The report continues with a 34 entry evidence timeline (work orders, shift log notes such as "FIC207 in auto but flow will not settle, looks like a sticky valve", lab exceedances, two operator moves to manual, a healthy gamma scan that rules out tray damage, and the controller returned to auto after repair) and a verification block.
 
 <p align="center">
-  <img src="docs/figures/evidence_subgraph.png" width="90%" alt="Evidence subgraph">
+  <img width="1625" height="990" alt="evidence_subgraph" src="https://github.com/user-attachments/assets/6cc5e534-f3cd-4e20-b740-6e7fca0bb819" />
 </p>
 
 The subgraph above is the slice of the knowledge graph behind one of these investigations: the episode, the asset and its tags, the cited shift log notes and work order, the cycling symptom that indicates the stiction hypothesis, the guides that describe it, and the earlier episode it recurs from.
