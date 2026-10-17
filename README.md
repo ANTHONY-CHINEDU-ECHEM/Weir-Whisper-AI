@@ -3,6 +3,12 @@
 ### Multi agent GraphRAG investigator for tray weeping and separation efficiency loss in distillation columns
 # Weir Whisper AI: System Architecture
 
+<p align="center">
+<img width="723" height="415" alt="image" src="https://github.com/user-attachments/assets/c015e318-6198-40eb-83d2-cd8886333fe7" />
+</p>
+
+SOURCE: https://www.researchgate.net/figure/Conventional-cross-flow-distillation-tray-4_fig3_343789315
+
 > Evidence grounded investigation assistant for distillation column operations. Plant signals and records are fused into a temporal knowledge graph, retrieved through hybrid GraphRAG, reasoned over by specialist agents, and published only after every claim is verified against cited evidence.
 
 ## 1. End to End Architecture
